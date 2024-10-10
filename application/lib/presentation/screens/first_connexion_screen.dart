@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:application/core/constants/app_colors.dart';
 import 'package:application/presentation/widgets/button.dart';
+import 'package:application/presentation/widgets/information.dart';
 
 class FirstConnexionScreen extends StatelessWidget {
   const FirstConnexionScreen({Key? key}) : super(key: key);
@@ -19,28 +20,27 @@ class FirstConnexionScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 // Titre principal
                 _buildTitle(),
                 const SizedBox(height: 30),
 
                 // Icônes et descriptions
-                _buildInfoRow(
+                InfoRow(
                   icon: Icons.shopping_cart,
                   title: 'Suivez vos réservations',
                   description: 'QuickLab vous permet de réserver vos produits simplement',
                 ),
                 const SizedBox(height: 20),
-                _buildInfoRow(
+                InfoRow(
                   icon: Icons.timer,
                   title: 'Gagnez un temps précieux',
-                  description: "Réservez vos produits n'a jamais été aussi rapide avec QuickLab",
+                  description: "Réservez vos produits n'a jamais été aussi rapide ",
                 ),
                 const SizedBox(height: 20),
-                _buildInfoRow(
+                InfoRow(
                   icon: Icons.notifications,
-                  title: 'Notifiez dès que prêt',
-                  description: 'Soyez prévenu dès que vos réservations sont prêtes',
+                  title: 'Soyez avertie',
+                  description: 'Vous êtes prévenu dès que vos réservations sont prêtes',
                 ),
                 const SizedBox(height: 20),
               ],
@@ -60,6 +60,7 @@ class FirstConnexionScreen extends StatelessWidget {
 
                   // Texte se connecter
                   _buildLoginText(context),
+                  const SizedBox(height: 5),
                 ],
               ),
             ),
@@ -119,48 +120,7 @@ class FirstConnexionScreen extends StatelessWidget {
             style: TextStyle(
               color: AppColors.bleu,
               fontSize: 20,
-              ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  // Méthode pour construire les lignes d'informations
-  Row _buildInfoRow({required IconData icon, required String title, required String description}) {
-    return Row(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.white,
-          ),
-          padding: const EdgeInsets.all(10),
-          child: Icon(icon, color: AppColors.bleu, size: 30),
-        ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  description,
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ],
