@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:application/core/constants/app_colors.dart';
-import 'package:application/presentation/widgets/information.dart'; // Importez le widget InfoRow
-import 'package:application/presentation/widgets/button.dart'; // Importez le widget CustomButton
+import 'package:application/presentation/widgets/information.dart';
+import 'package:application/presentation/widgets/button.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.bg,
+      backgroundColor: AppColors.nuit_bg,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -19,24 +19,24 @@ class RegisterScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
-                  icon: Icon(Icons.arrow_back, color: AppColors.bleu),
+                  icon: Icon(Icons.arrow_back, color: AppColors.nuit_bleu),
                   onPressed: () {
                     Navigator.pop(context);
                   },
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pushNamed(context, '/first_connexion');
                   },
                   child: Text(
                     'Retour',
-                    style: TextStyle(color: AppColors.bleu),
+                    style: TextStyle(color: AppColors.nuit_bleu),
                   ),
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 50),
 
           // Ajout de padding à partir du titre
           Padding(
@@ -73,7 +73,7 @@ class RegisterScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: AppColors.bleu),
+                      borderSide: const BorderSide(color: AppColors.nuit_bleu),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
@@ -92,7 +92,7 @@ class RegisterScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: AppColors.bleu),
+                      borderSide: const BorderSide(color: AppColors.nuit_bleu),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
@@ -111,20 +111,22 @@ class RegisterScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: AppColors.bleu),
+                      borderSide: const BorderSide(color: AppColors.nuit_bleu),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                   style: const TextStyle(color: Colors.white),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 50),
 
                 // Bouton Suivant
-                CustomButton(
-                  text: 'Suivant',
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/register');
-                  },
+                Center(
+                  child: CustomButton(
+                    text: 'Suivant',
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/register');
+                    },
+                  ),
                 ),
               ],
             ),

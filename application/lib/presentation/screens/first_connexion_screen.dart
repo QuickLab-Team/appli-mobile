@@ -9,7 +9,7 @@ class FirstConnexionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.bg,
+      backgroundColor: AppColors.nuit_bg,
       body: Padding(
         padding: const EdgeInsets.only(right: 40, top: 80, left: 40),
         child: Column(
@@ -96,7 +96,7 @@ class FirstConnexionScreen extends StatelessWidget {
           style: TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.bold,
-            color: AppColors.bleu,
+            color: AppColors.nuit_bleu,
           ),
         ),
       ],
@@ -118,7 +118,7 @@ class FirstConnexionScreen extends StatelessWidget {
           child: const Text(
             'Se connecter',
             style: TextStyle(
-              color: AppColors.bleu,
+              color: AppColors.nuit_bleu,
               fontSize: 20,
             ),
           ),

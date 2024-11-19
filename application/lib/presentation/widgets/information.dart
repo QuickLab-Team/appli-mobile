@@ -23,7 +23,7 @@ class InfoRow extends StatelessWidget {
             color: Colors.white,
           ),
           padding: const EdgeInsets.all(10),
-          child: Icon(icon, color: AppColors.bleu, size: 30),
+          child: Icon(icon, color: AppColors.nuit_bleu, size: 30),
         ),
         const SizedBox(width: 10),
         Expanded(
