@@ -3,8 +3,8 @@ import 'package:application/core/constants/app_colors.dart';
 import 'package:application/presentation/widgets/information.dart';
 import 'package:application/presentation/widgets/button.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 // Titre principal
                 const Text(
-                  'Connexion',
+                  'Créer un compte',
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
@@ -58,8 +58,8 @@ class LoginScreen extends StatelessWidget {
                 // Liste d'informations
                 InfoRow(
                   icon: Icons.keyboard,
-                  title: 'Connectez-vous',
-                  description: "Suivez vos commandes et réservez vos produits",
+                  title: 'Créer votre identifiant',
+                  description: "Votre identifiant constitue une suite de 6 chiffres",
                 ),
                 const SizedBox(height: 30),
 
@@ -100,7 +100,23 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
-
+                // Champ de texte pour la confirmation du mot de passe
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Confirmer votre mot de passe',
+                    labelStyle: const TextStyle(color: Colors.white),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Colors.white),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: AppColors.nuit_bleu),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  style: const TextStyle(color: Colors.white),
+                ),
                 const SizedBox(height: 50),
 
                 // Bouton Suivant
